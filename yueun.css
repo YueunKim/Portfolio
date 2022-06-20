@@ -1,0 +1,187 @@
+:root {
+  scroll-behavior: smooth;
+  --color-black: #212529;
+  --background-color: #f8f9fa;
+  --accent-color: #ce9ead;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* height: 100vh; */
+  background-color: var(--background-color);
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 0; /*스페이스 없앰*/
+  font-family: "Source Sans Pro";
+}
+
+a {
+  text-decoration: none; /*a태그 밑줄 색상 변한거 없앰 */
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex; /*한 줄에 나란히*/
+  justify-content: space-around; /*같은 중심축에서 스페이스*/
+  align-items: center; /*반대축에서 중심에 위치*/
+  background-color: var(--background-color);
+  padding: 8px 12px; /*양 모서리에 너무 붙어있지 않게 패딩*/
+  position: sticky;
+  top: 0;
+}
+
+.header__logo {
+  font-size: 25px;
+  color: var(--text-color);
+  padding-left: 10px;
+}
+
+.header__logo i {
+  color: var(--accent-color);
+}
+
+.header__menu {
+  display: flex;
+  font-size: 20px;
+  list-style: none; /* dot 없애기 */
+  padding-left: 0; /* 패딩때문에 중간에 안오므로 삭제 */
+}
+
+.header__menu li {
+  padding: 8px 12px; /*클릭할 백그라운드 영역 넓게*/
+}
+
+.header__menu li:hover {
+  /*hover : 마우스를 올렸을 때*/
+  background-color: var(--accent-color);
+  border-radius: 4px; /*끝에 둥글게*/
+}
+
+.header__icons {
+  list-style: none;
+  color: var(--text-color);
+  display: flex;
+  padding-left: 0;
+}
+
+.header__icons li {
+  padding: 8px 12px;
+}
+
+.header__toggleBtn {
+  display: none; /*기본적으로는 안 보이게*/
+  position: absolute; /*원래 문서 흐름에서 나와서 포지션 : absolute*/
+  right: 32px;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+/* Home */
+.Home .Home_container {
+  /* background-color: var(--background-color); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans Korean";
+  font-size: 300%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #ce9ead;
+}
+
+.Home .Home_container .Home_developer {
+  padding-bottom: 2%;
+}
+
+/* About */
+.About_title, .Skills_title, .Projects_title {
+  font-size: 300%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.About .About_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding-bottom: 3%;
+  background-color: antiquewhite;
+}
+
+.About_box_1 {
+  list-style: none;
+  font-size: 150%;
+  padding-bottom: 2%;
+}
+
+.About_box_2 {
+  list-style: none;
+  display: flex;
+  font-size: 200%;
+}
+
+.About_email, .About_github, .About_blog {
+  /* padding-left: 20%; */
+  padding-right: 20%;
+}
+
+/* Skills */
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  /*레이아웃 반응형으로 (768보다 작을 때)*/
+  .header {
+    flex-direction: column;
+    align-items: flex-start; /*중심축이 수직인데 수평에서 왼쪽으로 놓기위해 */
+    padding: 8px 24px;
+  }
+
+  .header__menu {
+    display: none; /*기본적으로는 안 보이게*/
+    flex-direction: column;
+    align-items: center; /*메뉴 자체 넓이가 좁아서 중간에 오지 않음*/
+    width: 100%; /*최대 100으로 바꿔주면 중간에 옴*/
+  }
+
+  .header__menu li {
+    /*마우스 올렸을 때 나타나는 하이라이트 넓게*/
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__icons {
+    display: none; /*기본적으로는 안 보이게*/
+    justify-content: center; /*아이콘 방향은 그대로 row 이므로 justify*/
+    width: 100%;
+  }
+
+  .header__toggleBtn {
+    display: block; /*화면 작아졌을 때만 보이기*/
+  }
+
+  .header__menu.active,
+  .header__icons.active {
+    display: flex;
+  }
+}
