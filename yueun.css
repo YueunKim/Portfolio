@@ -1,5 +1,7 @@
 :root {
   scroll-behavior: smooth;
+  --ti-cursor-margin-left: 0.1em;
+  /* --ti-cursor-color: #f8f9fa; */
   --color-black: #212529;
   --background-color: #f8f9fa;
   --accent-color: #ce9ead;
@@ -104,7 +106,7 @@ a {
   background-color: #ce9ead;
 }
 
-.Home .Home_container .Home_developer {
+.Home .Home_container #Home_whoAmI {
   padding-bottom: 2%;
 }
 
